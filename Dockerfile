@@ -13,3 +13,5 @@ ENV VERSION=${MVN_VER}
 COPY inception.sh /tmp/
 
 RUN mkdir /opt/maven && cd /opt/maven && wget -q http://apache.mirror.amaze.com.au/maven/maven-3/$VERSION/binaries/apache-maven-$VERSION-bin.tar.gz && gunzip * && tar xvpf *;rm -f *.tar;cat /tmp/inception.sh >> /root/.bashrc;rm /tmp/inception.sh
+
+WORKDIR /root
